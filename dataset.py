@@ -33,7 +33,7 @@ class Satellite2Map_Data(Dataset):
         self.root = root
         list_files = os.listdir(self.root)
         #### Removing '.ipynb_checkpoints' from the list
-        list_files.remove('.ipynb_checkpoints')
+        # list_files.remove('.ipynb_checkpoints')
         self.n_samples = list_files
 
     def __len__(self):
