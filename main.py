@@ -6,6 +6,7 @@ import config
 from dataset import Satellite2Map_Data
 from models import Generator, Discriminator
 from torch.utils.data import DataLoader
+from tqdm.notebook import tqdm
 import matplotlib.pyplot as plt
 
 torch.backends.cudnn.benchmark = True
