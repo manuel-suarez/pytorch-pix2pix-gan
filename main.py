@@ -13,7 +13,8 @@ Gen_loss = []
 Dis_loss = []
 
 def train(netG, netD, train_dl, OptimizerG, OptimizerD, L1_Loss, BCE_Loss):
-    for idx, (x,y) in enumerate(train_dl):
+    loop = tqdm(train_dl)
+    for idx, (x,y) in enumerate(loop):
         x = x.cuda()
         y = y.cuda()
         ############### Train discriminator ##############
@@ -41,7 +42,7 @@ def train(netG, netD, train_dl, OptimizerG, OptimizerD, L1_Loss, BCE_Loss):
         OptimizerG.step()
 
         if idx % 10 == 0:
-            train_dl.set_postfix(
+            loop.set_postfix(
                 D_real=torch.sigmoid(D_real).mean().item(),
                 D_fake=torch.sigmoid(D_fake).mean().item(),
             )
