@@ -77,7 +77,7 @@ def main():
             save_some_examples(netG, val_dl, epoch, folder="evaluation")
 main()
 plt.figure(figsize=(10,5))
-plt.title("Generator and Discrimiantor Loss During Training")
+plt.title("Generator and Discriminator Loss During Training")
 plt.plot(Gen_loss, label="Generator")
 plt.plot(Dis_loss, label="Discriminator")
 plt.xlabel("Epochs")
